@@ -1,8 +1,15 @@
 Rails.application.routes.draw do
   devise_for :users, controllers: {
     registrations: "users/registrations",
-    sessions: "users/sessions"
+    sessions: "users/sessions",
+    omniauth_callbacks:  "users/omniauth_callbacks"
   }
+
+  devise_scope :user do
+    ## ↓登録方法の選択ページ
+    get "users/select_registration", to: 'users/registrations#select', as: :select_registration
+  end
+
   root to: "items#index"
 
   resource :users, only: [:show] do

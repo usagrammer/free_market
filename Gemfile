@@ -69,3 +69,9 @@ gem 'devise'
 gem 'jquery-rails'
 gem 'haml-rails'
 gem 'font-awesome-sass'
+
+gem 'recaptcha', require: "recaptcha/rails"
+
+gem 'omniauth-google-oauth2'
+gem 'omniauth-facebook'
+gem 'omniauth-rails_csrf_protection'
